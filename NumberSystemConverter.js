@@ -27,9 +27,74 @@ function getConvertedNumber(numberToBeConverted,fromNumberSytem,toNumberSystem=1
 function binaryToDecimal(){
   const numberToBeConverted=getNumberToBeConverted("binary");
   let convertedNumber=getConvertedNumber(numberToBeConverted,2);
-  displayConvertedNumber(convertedNumber,"decimal")
+  displayConvertedNumber(convertedNumber,"decimal");
 }
 
+function binaryToHex(){
+  const numberToBeConverted=getNumberToBeConverted("binary");
+  let convertedNumber=getConvertedNumber(numberToBeConverted,2,16);
+  displayConvertedNumber(convertedNumber,"hex");
+}
+
+function binaryToOctal(){
+  const numberToBeConverted=getNumberToBeConverted("binary");
+  let convertedNumber=getConvertedNumber(numberToBeConverted,2,8);
+  displayConvertedNumber(convertedNumber,"octal");
+}
+
+function decimalToBinary(){
+  const numberToBeConverted=getNumberToBeConverted("decimal");
+  let convertedNumber=getConvertedNumber(numberToBeConverted,10,2);
+  displayConvertedNumber(convertedNumber,"binary");
+}
+
+function decimalToHex(){
+  const numberToBeConverted=getNumberToBeConverted("decimal");
+  let convertedNumber=getConvertedNumber(numberToBeConverted,10,16);
+  displayConvertedNumber(convertedNumber,"hex");
+}
+
+function decimalToOctal(){
+  const numberToBeConverted=getNumberToBeConverted("decimal");
+  let convertedNumber=getConvertedNumber(numberToBeConverted,10,8);
+  displayConvertedNumber(convertedNumber,"octal");
+}
+
+function hexToDecimal(){
+  const numberToBeConverted=getNumberToBeConverted("hex");
+  let convertedNumber=getConvertedNumber(numberToBeConverted,16,10);
+  displayConvertedNumber(convertedNumber,"decimal");
+}
+
+function hexToOctal(){
+  const numberToBeConverted=getNumberToBeConverted("hex");
+  let convertedNumber=getConvertedNumber(numberToBeConverted,16,8);
+  displayConvertedNumber(convertedNumber,"octal");
+}
+
+function hexToBinary(){
+  const numberToBeConverted=getNumberToBeConverted("hex");
+  let convertedNumber=getConvertedNumber(numberToBeConverted,16,2);
+  displayConvertedNumber(convertedNumber,"binary");
+}
+
+function octalToDecimal(){
+  const numberToBeConverted=getNumberToBeConverted("octal");
+  let convertedNumber=getConvertedNumber(numberToBeConverted,8,10);
+  displayConvertedNumber(convertedNumber,"decimal");
+}
+
+function octalToBinary(){
+  const numberToBeConverted=getNumberToBeConverted("octal");
+  let convertedNumber=getConvertedNumber(numberToBeConverted,8,2);
+  displayConvertedNumber(convertedNumber,"binary");
+}
+
+function octalToHex(){
+  const numberToBeConverted=getNumberToBeConverted("octal");
+  let convertedNumber=getConvertedNumber(numberToBeConverted,8,16);
+  displayConvertedNumber(convertedNumber,"hex");
+}
 
 function numberSystemConverter(){
   console.clear();
@@ -90,7 +155,12 @@ function numberSystemConverter(){
     case 10:
       octalToDecimal();
       break;
+
     case 11:
+      octalToBinary();
+      break;
+
+    case 12:
       octalToHex();
       break;
     default:
