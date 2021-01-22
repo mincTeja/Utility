@@ -1,26 +1,35 @@
 const readLineSync = require('readline-sync');
 
-function binaryToDecimalConversion(numberToBeConverted){
-  let convertedNumber=0,conversionMultiplier=1;
-  console.log(typeof numberToBeConverted);
-  while(numberToBeConverted){
-    let remd=numberToBeConverted%10;
-    convertedNumber+=(remd*conversionMultiplier);
-    numberToBeConverted/=2;
-    conversionMultiplier*=2;
-    console.log("remd : "+remd)
-    console.log("converted number:" + convertedNumber)
-  }
-  console.log(numberToBeConverted);
-  console.log(convertedNumber)
-  return convertedNumber
+function getNumberToBeConverted(numberSystem=""){
+  const numberToBeConverted=readLineSync.question('Enter ' +numberSystem+' number to be converted : ');
+  return numberToBeConverted;
 }
 
-function binaryToDecimal(){
-  const numberToBeConverted=readLineSync.question('Enter binary number to be converted : ');
-  const convertedDecimal=binaryToDecimalConversion(parseInt(numberToBeConverted));
-  console.log("Please find the converted decimal number : "+convertedDecimal)
+function displayConvertedNumber(convertedNumber,numberSystem=""){
+  console.log("Please find the converted "+ numberSystem +" number : "+convertedNumber);
 }
+
+
+function getConvertedNumber(numberToBeConverted,fromNumberSytem,toNumberSystem=10){
+  // let convertedNumber=0,conversionMultiplier=1;
+  // let index=numberToBeConverted.length-1;
+  // while(index>=0){
+  //   let remd=parseInt(numberToBeConverted[index]);
+  //   convertedNumber+=(remd*conversionMultiplier);
+  //   conversionMultiplier*=fromNumberSytem;
+  //   index--;
+  // }
+  let convertedNumber=parseInt(numberToBeConverted, fromNumberSytem).toString(toNumberSystem);
+  return convertedNumber;
+}
+
+
+function binaryToDecimal(){
+  const numberToBeConverted=getNumberToBeConverted("binary");
+  let convertedNumber=getConvertedNumber(numberToBeConverted,2);
+  displayConvertedNumber(convertedNumber,"decimal")
+}
+
 
 function numberSystemConverter(){
   console.clear();
@@ -45,11 +54,45 @@ function numberSystemConverter(){
     case 1:
       binaryToDecimal();
       break;
+    
+    case 2:
+      binaryToHex();
+      break;
+
+    case 3:
+      binaryToOctal();
+      break;
+
+    case 4:
+      decimalToBinary();
+      break;
+    
+    case 5:
+      decimalToHex();
+      break;
+
+    case 6:
+      decimalToOctal();
+      break;
+
     case 7:
       hexToDecimal();
       break;
+    
+    case 8:
+      hexToBinary();
+      break;
+
+    case 9:
+      hexToOctal();
+      break;
+
     case 10:
       octalToDecimal();
+      break;
+    case 11:
+      octalToHex();
+      break;
     default:
       console.log("Hope i will be able to help you in future.");
   }
