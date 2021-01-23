@@ -169,5 +169,6 @@ function numberSystemConverter(){
 }
 
 module.exports={
-  numberSystemConverter
+  numberSystemConverter,
+  getConvertedNumber
 };

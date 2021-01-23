@@ -22,12 +22,7 @@ function toHumanDate(){
 }
 
 function humanDateToEpoch(enteredHumanDate){
-  let enteredHumanDateString = enteredHumanDate.year;
-  enteredHumanDateString+= "/"+enteredHumanDate.month;
-  enteredHumanDateString+= "/"+enteredHumanDate.date;
-  enteredHumanDateString+= " "+enteredHumanDate.hours;
-  enteredHumanDateString+= ":"+enteredHumanDate.minutes;
-  enteredHumanDateString+= ":"+enteredHumanDate.seconds;
+  let enteredHumanDateString = `enteredHumanDate.year/enteredHumanDate.month/enteredHumanDate.date enteredHumanDate.hours:enteredHumanDate.minutes:enteredHumanDate.seconds`;
   return Date.parse(new Date(enteredHumanDateString));
 }
 

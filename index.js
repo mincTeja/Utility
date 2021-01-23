@@ -1,9 +1,11 @@
 const readLineSync = require('readline-sync');
-const urlEncoderDecoderUtility=require('./URLEncoderDecoder');
-const base64EncoderDecoderUtility=require('./Base64EncoderDecoder');
-const stringHashUtility=require('./StringHashing');
-const epochConverterUtility=require('./EpochConverter');
-const numberSystemConverterUtility=require('./NumberSystemConverter');
+const urlEncoderDecoderUtility = require('./URLEncoderDecoder');
+const base64EncoderDecoderUtility = require('./Base64EncoderDecoder');
+const stringHashUtility = require('./StringHashing');
+const epochConverterUtility = require('./EpochConverter');
+const numberSystemConverterUtility = require('./NumberSystemConverter');
+const rgbHexConverterUtility = require('./RgbHexConverter');
+const unitConverterUtility = require('./UnitConverter');
 
 const utilityOptionsAvailable=`Hello Pal, I can help you with:\n
 1. URL Encoder/Decoder\n
@@ -32,11 +34,11 @@ switch(parseInt(utilityOptionSelected)){
   case 5:
     numberSystemConverterUtility.numberSystemConverter();
     break;
-  case6:
-    rgb();
+  case 6:
+    rgbHexConverterUtility.rgbHexConverter();
     break;
-  case7:
-    unitConverter();
+  case 7:
+    unitConverterUtility.unitConverter();
     break;
   default:
     console.log("Hope i will be able to solve your problem in future!")
